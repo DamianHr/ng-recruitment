@@ -1,0 +1,5 @@
+<h2>Countries: </h2>
+
+<ul *ngFor="let country of countries$ | async">
+  <li>{{country.name}}</li>
+</ul>
