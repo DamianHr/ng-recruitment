@@ -1,7 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <countries></countries>
-</div>
+<h1 class="mat-1">{{title}}</h1>
+<app-search-bar (searchChanged)="appCountries.onFilterUpdate($event)" ></app-search-bar>
+<app-countries #appCountries></app-countries>
