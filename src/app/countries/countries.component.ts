@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { Country } from "./definitions";
-import { CountriesService, RequestTypes } from "./countries.service";
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Country } from './definitions';
+import { CountriesService, RequestTypes } from './countries.service';
 
 @Component({
-  selector: 'countries', 
+  selector: 'app-countries',
   templateUrl: './countries.component.html'
 })
 export class CountriesComponent implements OnInit {
@@ -15,7 +15,7 @@ export class CountriesComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.countries$ = this.countriesService.getAll();
+    // this.countries$ = this.countriesService.getAll();
     this.countries$ = this.countriesService.getByParam(RequestTypes.NAME, '');
   }
 }

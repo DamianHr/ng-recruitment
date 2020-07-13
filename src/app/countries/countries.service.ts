@@ -1,11 +1,11 @@
 
 // For more information refer to https://restcountries.eu/#api-endpoints-all
 
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpResponse } from "@angular/common/http";
-import { map, catchError } from "rxjs/operators" 
-import { Observable, EMPTY } from "rxjs";
-import { Country } from "./definitions";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators'
+import { Observable, EMPTY } from 'rxjs';
+import { Country } from './definitions';
 
 const ApiUrl = 'https://restcountries.eu/rest/v2';
 
@@ -33,7 +33,7 @@ export class CountriesService {
 
   public getAll(): Observable<Array<Country>> {
     return this.http.get(`${ApiUrl}/all`).pipe(
-      map(response => <Array<Country>>response),
+      map(response => response as Array<Country>),
       catchError(e => console.error)
     );
   }
@@ -44,7 +44,7 @@ export class CountriesService {
       url += '/' + parameter;
     }
     return this.http.get(url).pipe(
-      map(response => <Array<Partial<Country>>>response),
+      map(response => response as Array<Partial<Country>>),
       catchError(() => EMPTY)
     );
   }
