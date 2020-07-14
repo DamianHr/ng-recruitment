@@ -19,6 +19,7 @@
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "jasmine-core": "^3.5.0",
+    "ng-mat-search-bar": "^10.0.0-beta.0",
     "rxjs": "^6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.3"

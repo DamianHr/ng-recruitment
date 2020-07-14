@@ -16,6 +16,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {NgMatSearchBarModule} from 'ng-mat-search-bar';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import {MatSortModule} from '@angular/material/sort';
         MatSortModule,
         CdkTableModule,
         MatSliderModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        NgMatSearchBarModule
     ],
     providers: [],
     bootstrap: [AppComponent]

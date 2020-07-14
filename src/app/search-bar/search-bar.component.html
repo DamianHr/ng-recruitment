@@ -1,13 +1,11 @@
 <mat-toolbar>
     <mat-toolbar-row>
-        <form [formGroup]="formGroup">
-            <mat-form-field class="example-full-width">
-                <mat-label>Search</mat-label>
-                <input matInput (keyup)="searchChanged.emit(inputControl.value)" type="text"
-                       [formControl]="inputControl"/>
-            </mat-form-field>
-        </form>
+        <img class="toolbar-logo"
+             src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Globe_font_awesome.svg/480px-Globe_font_awesome.svg.png"
+             alt="globe">
         <span class="toolbar-spacer"></span>
-        <img class="toolbar-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Globe_font_awesome.svg/480px-Globe_font_awesome.svg.png" alt="globe">
+        <form class="form-inline form-sm" [formGroup]="formGroup">
+            <mat-search-bar [formControl]="inputControl"></mat-search-bar>
+        </form>
     </mat-toolbar-row>
 </mat-toolbar>
