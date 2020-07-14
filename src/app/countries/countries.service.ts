@@ -38,13 +38,14 @@ export class CountriesService {
   public getByParam(
     requestType: RequestTypes,
     parameter: string | Regions
-  ): Observable<Country[]> {
+  ): Observable<Readonly<Country[]>> {
     let url = `${ApiUrl}/${requestType}`;
     if (parameter) {
       url += '/' + parameter;
     }
     return this.http.get<Array<Country> | Country>(url).pipe(
       map((response) => (Array.isArray(response) ? response : [response])),
+      map((array) => Object.freeze(array)),
       catchError(() => EMPTY)
     );
   }

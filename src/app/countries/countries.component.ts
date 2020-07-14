@@ -19,21 +19,21 @@ export class CountriesComponent implements OnDestroy {
     'population',
     'alpha3Code',
   ];
-  data: Country[] = [];
+  data: Readonly<Country[]> = [];
 
   destroyer: Subject<any> = new Subject<any>();
 
   constructor(private readonly countriesService: CountriesService) {}
 
-  public onFilterUpdate(filter: string) {
-    this.filterUpdate(filter)
+  public onFilterUpdate(parameter: string) {
+    this.filterUpdate(parameter)
       .pipe(takeUntil(this.destroyer))
       .subscribe((countries) => (this.data = countries));
   }
 
-  public filterUpdate(filter: string) {
+  public filterUpdate(parameter: string) {
     return this.countriesService
-      .getByParam(RequestTypes.NAME, filter)
+      .getByParam(RequestTypes.NAME, parameter)
       .pipe(map((countries) => this.sort(countries, 'region', true)));
   }
 
@@ -43,17 +43,25 @@ export class CountriesComponent implements OnDestroy {
   }
 
   /**
-   * TODO this can be the function to create by the candidate based on existing tests
+   * Sorts given data by provided property with respecitve order.
+   * @param data The array of countries.
+   * @param property The property of country object.
+   * @param ascending Defines the soring order.
    */
   private sort(
-    data: Country[],
+    data: Readonly<Country[]>,
     property: keyof Country,
     ascending = false
-  ): Country[] {
-    return data.sort((a, b) => compare(a[property], b[property], ascending));
+  ): Readonly<Country[]> {
+    return data;
   }
-}
 
-function compare(a: string | number, b: string | number, ascending: boolean) {
-  return (a < b ? -1 : 1) * (ascending ? 1 : -1);
+  /**
+   * Filters given data by countries that have population higher
+   * than 2M and its name starts with `t` or finishes with `o`.
+   * @param data The array of countries.
+   */
+  private filter(data: Readonly<Country[]>): Readonly<Country[]> {
+    return data;
+  }
 }
