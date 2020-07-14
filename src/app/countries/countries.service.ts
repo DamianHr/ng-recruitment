@@ -30,10 +30,9 @@ export class CountriesService {
   constructor(private readonly http: HttpClient) {}
 
   public getAll(): Observable<Array<Country>> {
-    return this.http.get(`${ApiUrl}/all`).pipe(
-      map((response) => response as Country[]),
-      catchError(() => EMPTY)
-    );
+    return this.http
+      .get<Array<Country>>(`${ApiUrl}/all`)
+      .pipe(catchError(() => EMPTY));
   }
 
   public getByParam(
@@ -44,7 +43,7 @@ export class CountriesService {
     if (parameter) {
       url += '/' + parameter;
     }
-    return this.http.get(url).pipe(
+    return this.http.get<Array<Country> | Country>(url).pipe(
       map((response) => (Array.isArray(response) ? response : [response])),
       catchError(() => EMPTY)
     );
