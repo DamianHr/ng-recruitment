@@ -26,14 +26,15 @@ export class CountriesComponent implements OnDestroy {
   constructor(private readonly countriesService: CountriesService) {}
 
   public onFilterUpdate(filter: string) {
-    this.filterUpdate(filter).subscribe((countries) => (this.data = countries));
+    this.filterUpdate(filter)
+      .pipe(takeUntil(this.destroyer))
+      .subscribe((countries) => (this.data = countries));
   }
 
   public filterUpdate(filter: string) {
-    return this.countriesService.getByParam(RequestTypes.NAME, filter).pipe(
-      map((countries) => this.sort(countries, 'region', true)),
-      takeUntil(this.destroyer)
-    );
+    return this.countriesService
+      .getByParam(RequestTypes.NAME, filter)
+      .pipe(map((countries) => this.sort(countries, 'region', true)));
   }
 
   ngOnDestroy(): void {
