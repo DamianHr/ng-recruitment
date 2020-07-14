@@ -1,5 +1,5 @@
 <h1 class="mat-1">{{ title }}</h1>
 <app-search-bar
-  (searchChanged)="appCountries.onFilterUpdate($event)"
+  (searchChanged)="appCountries.onSearchUpdate($event)"
 ></app-search-bar>
 <app-countries #appCountries></app-countries>

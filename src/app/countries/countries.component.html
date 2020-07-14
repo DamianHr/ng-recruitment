@@ -1,22 +1,10 @@
-<div class="mat-elevation-z8" [hidden]="data?.length <= 0">
+<div class="mat-elevation-z1" [hidden]="data?.length <= 0">
   <table
     mat-table
     [dataSource]="data"
     class="full-width-table"
     aria-label="Elements"
   >
-    <!-- Flag Column -->
-    <ng-container cdkColumnDef="flag">
-      <th mat-header-cell *cdkHeaderCellDef>Flag</th>
-      <td mat-cell *cdkCellDef="let element">
-        <img
-          class="country-flag"
-          src="{{ element.flag }}"
-          alt="{{ element.name }}"
-        />
-      </td>
-    </ng-container>
-
     <!-- Name Column -->
     <ng-container cdkColumnDef="name">
       <th mat-header-cell *cdkHeaderCellDef>Name</th>

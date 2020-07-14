@@ -9,4 +9,14 @@
 .toolbar-logo {
   display: inline;
   width: 50px;
+  animation: spin linear 15s infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

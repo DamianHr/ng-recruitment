@@ -1,8 +1,8 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
-import { CountriesService, RequestTypes } from './countries.service';
+import { CountriesService } from './countries.service';
 import { Country } from './definitions';
 import { MatTable } from '@angular/material/table';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -12,43 +12,37 @@ import { map, takeUntil } from 'rxjs/operators';
 })
 export class CountriesComponent implements OnDestroy {
   @ViewChild(MatTable) table: MatTable<Country>;
-  displayedColumns: string[] = [
-    'flag',
-    'name',
-    'region',
-    'population',
-    'alpha3Code',
-  ];
+  displayedColumns: string[] = ['name', 'region', 'population', 'alpha3Code'];
   data: Readonly<Country[]> = [];
 
-  destroyer: Subject<any> = new Subject<any>();
+  private destroyer: Subject<any> = new Subject<any>();
 
   constructor(private readonly countriesService: CountriesService) {}
-
-  public onFilterUpdate(parameter: string) {
-    this.filterUpdate(parameter)
-      .pipe(takeUntil(this.destroyer))
-      .subscribe((countries) => (this.data = countries));
-  }
-
-  public filterUpdate(parameter: string) {
-    return this.countriesService
-      .getByParam(RequestTypes.NAME, parameter)
-      .pipe(map((countries) => this.sort(countries, 'region', true)));
-  }
 
   ngOnDestroy(): void {
     this.destroyer.next();
     this.destroyer.unsubscribe();
   }
 
+  public onSearchUpdate(searchTerm: string): void {
+    this.getData(searchTerm)
+      .pipe(takeUntil(this.destroyer))
+      .subscribe((countries) => (this.data = countries));
+  }
+
+  public getData(parameter: string): Observable<ReadonlyArray<Country>> {
+    return this.countriesService
+      .getByParameter(parameter)
+      .pipe(map((data) => this.filter(data)));
+  }
+
   /**
-   * Sorts given data by provided property with respecitve order.
+   * Sorts given data based on provided property and order.
    * @param data The array of countries.
-   * @param property The property of country object.
+   * @param property The property to sort on.
    * @param ascending Defines the soring order.
    */
-  private sort(
+  public sort(
     data: Readonly<Country[]>,
     property: keyof Country,
     ascending = false
@@ -57,11 +51,11 @@ export class CountriesComponent implements OnDestroy {
   }
 
   /**
-   * Filters given data by countries that have population higher
-   * than 2M and its name starts with `t` or finishes with `o`.
+   * Filters given data to keep only countries with a population higher or equal
+   * to 20M people and a name starting with one of those letters ['b', 'g', 'l'].
    * @param data The array of countries.
    */
-  private filter(data: Readonly<Country[]>): Readonly<Country[]> {
+  public filter(data: Readonly<Country[]>): Readonly<Country[]> {
     return data;
   }
 }

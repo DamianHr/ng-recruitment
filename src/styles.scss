@@ -3,10 +3,16 @@
 html,
 body {
   height: 100%;
+  background: rgb(240, 125, 0);
+  background: linear-gradient(
+    0deg,
+    rgb(238, 238, 238) 95%,
+    rgb(240, 125, 0) 95%,
+    rgb(240, 125, 0) 100%
+  );
 }
 
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #444;
 }

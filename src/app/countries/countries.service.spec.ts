@@ -16,7 +16,7 @@ describe('CountriesService', () => {
     service = TestBed.inject(CountriesService);
   });
 
-  it('should create', () => {
+  it('should create the service', () => {
     expect(service).toBeTruthy();
   });
 });
