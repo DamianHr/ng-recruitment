@@ -1,5 +1,8 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { SearchBarComponent } from './search-bar.component';
 
 describe('SearchBarComponent', () => {
@@ -8,9 +11,14 @@ describe('SearchBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchBarComponent ]
-    })
-    .compileComponents();
+      imports: [
+        BrowserAnimationsModule,
+        NgMatSearchBarModule,
+        ReactiveFormsModule,
+      ],
+      declarations: [SearchBarComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -415,7 +415,9 @@
   /**
    * The font size
    */
-   "editor.fontSize": 15
+  "editor.fontSize": 15,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single"
   /**
    * The line height
    */
