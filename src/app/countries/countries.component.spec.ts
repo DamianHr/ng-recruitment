@@ -42,7 +42,7 @@ describe('CountriesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xdescribe('filter', () => {
+  describe('filter', () => {
     it('should return an array', (done) => {
       const result = Array.isArray(component.filter([]));
       expect(result).toBe(true);

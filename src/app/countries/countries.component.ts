@@ -32,8 +32,7 @@ export class CountriesComponent implements OnDestroy {
 
   public getData(parameter: string): Observable<ReadonlyArray<Country>> {
     return this.countriesService
-      .getByParameter(parameter)
-      .pipe(map((data) => this.filter(data)));
+      .getByParameter(parameter);
   }
 
   /**

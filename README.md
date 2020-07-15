@@ -11,12 +11,10 @@ or work on the online IDE [StackBlitz ⚡️](https://stackblitz.com/edit/github
 
 ###### Working with an external IDE
 
-1. Clone the iREP using:
-   `git clone https://github.com/DamianHr/github-phvsk3-grpbff.git`
-2. Then install the project using:
-   `npm install`
-3. Run the application using:
-   `ng serve`
+1. Clone the iREP repo :
+   `https://github.com/DamianHr/github-phvsk3-grpbff.git`
+2. Install the project 
+3. Run the application
 4. Explore the app
 
 #### Challenge #1 - We want flags!
@@ -52,7 +50,7 @@ Inside the file `src/app/countries/countries.component.ts`, finish to implement 
 ##### Acceptance criteria:
 
 - Do not change the signature of the `sort()` function
-- The `sort()` function is writing using the TDD approach and
+- The `sort()` function is writing using the TDD approach
 - The `sort()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
 - The tests of the `sort()` function cover all the branches of the function
 - The `sort()` function is applied to `getData()` to see the sorted data in the app
