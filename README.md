@@ -1,4 +1,4 @@
-# igus® Recruiment Entry Project
+# iREP
 
 Welcome to the _**i**gus **R**ecruitment **E**ntry **P**roject_, the iREP is a small project which will help us evaluate your skills and abilities.
 
