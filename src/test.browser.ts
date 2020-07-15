@@ -19,6 +19,7 @@ import {
 import './app/app.component.spec.ts';
 import './app/search-bar/search-bar.component.spec.ts';
 import './app/countries/countries.component.spec.ts';
+import './app/countries/countries.service.spec.ts';
 
 bootstrap();
 
