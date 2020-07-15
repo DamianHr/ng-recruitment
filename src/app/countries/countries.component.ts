@@ -15,7 +15,7 @@ export class CountriesComponent implements OnDestroy {
   displayedColumns: string[] = ['name', 'region', 'population', 'alpha3Code'];
   data: Readonly<Country[]> = [];
 
-  private destroyer: Subject<any> = new Subject<any>();
+  private destroyer: Subject<void> = new Subject();
 
   constructor(private readonly countriesService: CountriesService) {}
 
