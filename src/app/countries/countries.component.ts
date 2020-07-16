@@ -3,7 +3,7 @@ import { CountriesService } from './countries.service';
 import { Country } from './definitions';
 import { MatTable } from '@angular/material/table';
 import { Observable, Subject } from 'rxjs';
-import { map, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-countries',
@@ -46,7 +46,7 @@ export class CountriesComponent implements OnDestroy {
     property: keyof Country,
     ascending = false
   ): Readonly<Country[]> {
-    return data;
+    return undefined;
   }
 
   /**
@@ -55,6 +55,6 @@ export class CountriesComponent implements OnDestroy {
    * @param data The array of countries.
    */
   public filter(data: Readonly<Country[]>): Readonly<Country[]> {
-    return data;
+    return undefined;
   }
 }

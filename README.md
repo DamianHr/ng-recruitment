@@ -23,12 +23,12 @@ Using the different info inside the project, modify the app to display a new col
 
 ##### Acceptance criteria:
 
-- The new column will be at the very left of the table
+- The new column will be at the very left of the table (`mat-table` in `countries/countries.component.ts`)
 - The flag will have the following styles:
   - a width of 25px
   - a solid black border of 1px
 - No additional queries will be used to achieve this task
-- Additional information about the current API response can be found [here](https://restcountries.eu/#api-endpoints-response-example)
+- Examples about the current API response can be found [here](https://restcountries.eu/#api-endpoints-response-example)
 
 #### Challenge #2 - We want filters!
 
@@ -37,11 +37,12 @@ Inside the file `src/app/countries/countries.component.ts`, finish to implement 
 ##### Acceptance criteria:
 
 - Do not change the signature of the `filter()` function
-- The `filter()` function will only allow data matching the following rules
+- The `filter()` function will only allow data matching the following rules:
   - The population of the country is higher or equal to 20M people
   - The name of the country starts with one of the letters ['b', 'g', 'l']
 - The `filter()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
 - The `filter()` function is applied to `getData()` to see the filtered data in the app
+- You are allowed to use [Mozilla's Javascipt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 #### Challenge #3 - We want order!
 
@@ -54,5 +55,6 @@ Inside the file `src/app/countries/countries.component.ts`, finish to implement 
 - The `sort()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
 - The tests of the `sort()` function cover all the branches of the function
 - The `sort()` function is applied to `getData()` to see the sorted data in the app
+- You are allowed to use [Mozilla's Javascipt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 Good luck ! :)

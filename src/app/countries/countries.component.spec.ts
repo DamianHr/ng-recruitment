@@ -76,6 +76,7 @@ describe('CountriesComponent', () => {
         { name: 'Ghana', population: 100000000 },
       ] as Country[]).length;
       expect(result).toBe(1);
+
       // And not be case sensitive
       const result2 = component.filter([
         { name: 'ghana', population: 100000000 },
