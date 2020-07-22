@@ -1,9 +1,10 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
-import { CountriesService } from './countries.service';
+
 import { Country } from './definitions';
 import { MatTable } from '@angular/material/table';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { CountriesService } from './countries.service';
 
 @Component({
   selector: 'app-countries',
@@ -17,7 +18,7 @@ export class CountriesComponent implements OnDestroy {
 
   private destroyer: Subject<void> = new Subject();
 
-  constructor(private readonly countriesService: CountriesService) {}
+  constructor(private readonly countriesService: CountriesService) { }
 
   ngOnDestroy(): void {
     this.destroyer.next();
@@ -29,6 +30,10 @@ export class CountriesComponent implements OnDestroy {
       .pipe(takeUntil(this.destroyer))
       .subscribe((countries) => (this.data = countries));
   }
+
+  /**
+   *   !!! YOUR CHANGES START HERE !!!
+   */
 
   public getData(parameter: string): Observable<ReadonlyArray<Country>> {
     return this.countriesService
