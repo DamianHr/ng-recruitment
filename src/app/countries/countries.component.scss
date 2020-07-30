@@ -1,3 +1,18 @@
 table {
   width: 100%;
 }
+
+.counter {
+  margin: 0 5px;
+}
+
+.hint {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  h1 {
+    font-size: 24px;
+    font-style: italic;
+    color: rgba(138, 138, 138, 0.85);
+  }
+}

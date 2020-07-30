@@ -1,5 +1,11 @@
 .mat-toolbar-row {
   height: 100px;
+  mat-search-bar,
+  mat-search-bar > .mat-search_icons > mat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 32px;
+  }
 }
 
 .toolbar-spacer {
@@ -8,8 +14,8 @@
 
 .toolbar-logo {
   display: inline;
-  width: 50px;
-  animation: spin linear 15s infinite;
+  width: 36px;
+  animation: spin linear 10s infinite;
 }
 
 @keyframes spin {

@@ -1,9 +1,8 @@
-<div class="mat-elevation-z1" [hidden]="data?.length <= 0">
+<div *ngIf="data?.length > 0; else hint">
   <table
     mat-table
     [dataSource]="data"
-    class="full-width-table"
-    aria-label="Elements"
+    class="full-width-table mat-elevation-z1"
   >
     <!-- Name Column -->
     <ng-container cdkColumnDef="name">
@@ -34,4 +33,12 @@
     <tr mat-header-row *cdkHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *cdkRowDef="let row; columns: displayedColumns"></tr>
   </table>
+  <small class="counter">{{ data?.length }} result(s)</small>
 </div>
+<ng-template #hint>
+  <div class="hint">
+    <h1>
+      Click on <span class="material-icons">search</span> to start a search
+    </h1>
+  </div>
+</ng-template>

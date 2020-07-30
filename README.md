@@ -24,12 +24,12 @@ Make sure that all the acceptance criteria are met.
 
 ##### Acceptance criteria:
 
-- The new column will be at the very left of the table (`mat-table` in `countries/countries.component.ts`)
+- The new column is at the very left of the table (`mat-table` in `countries/countries.component.ts`)
 - The header of the new column is labeled `Flag`
-- The flag will have the following styles:
+- The flag has the following styles:
   - a width of 25px
   - a solid black border of 1px
-- No additional queries will be used to achieve this task
+- No additional queries are used to achieve this task
 - Examples about the current API response can be found [here](https://restcountries.eu/#api-endpoints-response-example)
 
 #### Challenge #2 - We want filters!
@@ -40,11 +40,11 @@ Make sure that all the acceptance criteria are met.
 ##### Acceptance criteria:
 
 - Do not change the signature of the `filter()` function
-- The `filter()` function will only allow data matching the following rules:
+- The `filter()` function is only allowing data matching the following rules:
   - The population of the country is higher or equal to 20M people
   - The name of the country starts with one of the letters ['b', 'g', 'l']
 - The `filter()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
-- The `filter()` function will be applied to `getData()` to see the filtered data in the app
+- The `filter()` function is applied to `getData()` to see the filtered data in the app
 - You are allowed to use [Mozilla's Javascipt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 #### Challenge #3 - We want order!
@@ -58,7 +58,7 @@ then use this function to organize the data in the country table. Make sure that
 - The `sort()` function is writing using the TDD approach
 - The `sort()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
 - The tests of the `sort()` function cover all the branches of the function
-- The `sort()` function will be applied to `getData()` to see the sorted data in the app
+- The `sort()` function is applied to `getData()` to see the sorted data in the app
 - You are allowed to use [Mozilla's Javascipt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 Good luck ! :)

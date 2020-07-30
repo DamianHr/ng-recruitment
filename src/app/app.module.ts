@@ -6,7 +6,6 @@ import { CountriesComponent } from './countries/countries.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -16,6 +15,7 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 
 @NgModule({
@@ -27,11 +27,11 @@ import { NgMatSearchBarModule } from 'ng-mat-search-bar';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule,
     MatToolbarModule,
     MatInputModule,
     MatTableModule,
     MatSortModule,
+    MatIconModule,
     CdkTableModule,
     MatSliderModule,
     MatPaginatorModule,
