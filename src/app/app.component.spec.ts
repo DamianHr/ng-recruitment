@@ -12,7 +12,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
@@ -30,7 +29,6 @@ describe('AppComponent', () => {
         BrowserAnimationsModule,
         FormsModule,
         HttpClientModule,
-        RouterModule,
         MatToolbarModule,
         MatInputModule,
         MatTableModule,
