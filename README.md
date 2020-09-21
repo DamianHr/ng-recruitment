@@ -6,7 +6,7 @@ Welcome to the _**i**gus **R**ecruitment **E**ntry **P**roject_, the iREP is a s
 
 ##### Setup
 
-First let's make sure that we are working in good conditions. You can work fork this project from its Github [repository](https://github.com/DamianHr/github-phvsk3-grpbff/)
+First let's make sure that we are working in good conditions. You can fork this project from its Github [repository](https://github.com/DamianHr/github-phvsk3-grpbff/)
 or work on the online IDE [StackBlitz ⚡️](https://stackblitz.com/edit/github-phvsk3-grpbff).
 
 ###### Working with an external IDE
