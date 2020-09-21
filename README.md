@@ -24,7 +24,7 @@ Make sure that all the acceptance criteria are met.
 
 ##### Acceptance criteria:
 
-- The new column is at the very left of the table (`mat-table` in `countries/countries.component.ts`)
+- The new column is on the very left of the table (`mat-table` in `countries/countries.component.html`)
 - The header of the new column is labeled `Flag`
 - The flag has the following styles:
   - a width of 25px
