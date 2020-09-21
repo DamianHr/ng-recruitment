@@ -40,7 +40,7 @@ Make sure that all the acceptance criteria are met.
 ##### Acceptance criteria:
 
 - Do not change the signature of the `filter()` function
-- The `filter()` function is only allowing data matching the following rules:
+- The `filter()` function is only returning data matching the following rules:
   - The population of the country is higher or equal to 20M people
   - The name of the country starts with one of the letters ['b', 'g', 'l']
 - The `filter()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
@@ -55,7 +55,7 @@ then use this function to organize the data in the country table. Make sure that
 ##### Acceptance criteria:
 
 - Do not change the signature of the `sort()` function
-- The `sort()` function is writing using the TDD approach
+- The `sort()` function is written using the TDD approach
 - The `sort()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
 - The tests of the `sort()` function cover all the branches of the function
 - The `sort()` function is applied to `getData()` to see the sorted data in the app
