@@ -7,7 +7,7 @@ import { Country } from './definitions';
 /**
  * For more information refer to https://restcountries.eu/#api-endpoints-all
  */
-const ApiUrl = 'https://restcountries.eu/rest/v2/name';
+const ApiUrl = 'https://restcountries.com/v2/name';
 
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
