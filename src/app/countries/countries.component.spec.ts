@@ -86,5 +86,5 @@ describe('CountriesComponent', () => {
     });
   });
 
-  describe('sort', () => {});
+  // describe('sort', () => {});
 });
