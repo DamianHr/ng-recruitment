@@ -6,7 +6,7 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
 
@@ -17,30 +17,33 @@ import { debounceTime, takeUntil, tap } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchBarComponent implements OnInit, OnDestroy {
-  public inputControl = new FormControl('', [Validators.minLength(1)]);
   public formGroup = this.formBuilder.group({
-    search: this.inputControl,
+    search: ['', [Validators.minLength(1)]],
   });
 
   @Output()
-  searchChanged: EventEmitter<string> = new EventEmitter<string>();
+  public searchChanged = new EventEmitter<string | null>();
 
-  private destroyer: Subject<void> = new Subject();
+  #destroyer = new Subject<void>();
 
   constructor(private readonly formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
-    this.inputControl.valueChanges
+  public ngOnInit(): void {
+    this.formGroup.controls.search.valueChanges
       .pipe(
         debounceTime(500),
         tap((value) => this.searchChanged.emit(value)),
-        takeUntil(this.destroyer)
+        takeUntil(this.#destroyer)
       )
       .subscribe();
   }
 
-  ngOnDestroy(): void {
-    this.destroyer.next();
-    this.destroyer.unsubscribe();
+  public ngOnDestroy(): void {
+    this.#destroyer.next();
+    this.#destroyer.unsubscribe();
+  }
+
+  public clearSearch(): void {
+    this.formGroup.reset();
   }
 }

@@ -7,7 +7,7 @@ import { Country } from './definitions';
 /**
  * For more information refer to https://restcountries.com/#api-endpoints-v2-all
  */
-const ApiUrl = 'https://restcountries.com/v2/name';
+const apiUrl = 'https://restcountries.com/v2/name';
 
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
@@ -15,7 +15,7 @@ export class CountriesService {
 
   public getByParameter(parameter: string): Observable<Readonly<Country[]>> {
     return this.http
-      .get<Array<Country> | Country>(`${ApiUrl}/${parameter}`)
+      .get<Array<Country> | Country>(`${apiUrl}/${parameter}`)
       .pipe(
         map((response) => (Array.isArray(response) ? response : [response])),
         map((array) => Object.freeze(array)),

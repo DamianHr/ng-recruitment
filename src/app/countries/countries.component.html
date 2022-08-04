@@ -1,4 +1,4 @@
-<div *ngIf="data?.length > 0; else hint">
+<div *ngIf="data.length > 0; else hint">
   <table
     mat-table
     [dataSource]="data"
@@ -33,12 +33,10 @@
     <tr mat-header-row *cdkHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *cdkRowDef="let row; columns: displayedColumns"></tr>
   </table>
-  <small class="counter">{{ data?.length }} result(s)</small>
+  <small class="counter">{{ data.length }} result(s)</small>
 </div>
 <ng-template #hint>
   <div class="hint">
-    <h1>
-      Click on <span class="material-icons">search</span> to start a search
-    </h1>
+    <h1>Type in the searchbar above to find countries</h1>
   </div>
 </ng-template>

@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSliderModule } from '@angular/material/slider';
@@ -12,7 +13,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
@@ -29,6 +29,7 @@ describe('AppComponent', () => {
         BrowserAnimationsModule,
         FormsModule,
         HttpClientModule,
+        MatFormFieldModule,
         MatToolbarModule,
         MatInputModule,
         MatTableModule,
@@ -36,7 +37,6 @@ describe('AppComponent', () => {
         CdkTableModule,
         MatSliderModule,
         MatPaginatorModule,
-        NgMatSearchBarModule,
       ],
       declarations: [AppComponent, CountriesComponent, SearchBarComponent],
       schemas: [NO_ERRORS_SCHEMA],

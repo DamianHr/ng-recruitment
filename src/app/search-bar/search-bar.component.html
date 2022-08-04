@@ -1,13 +1,34 @@
 <mat-toolbar class="mat-elevation-z2">
-  <mat-toolbar-row>
+  <mat-toolbar-row class="toolbar-row">
+    <form [formGroup]="formGroup">
+      <mat-form-field
+        class="toolbar-search"
+        appearance="outline"
+        floatLabel="always"
+      >
+        <mat-label>Country</mat-label>
+        <span matPrefix><mat-icon>search</mat-icon></span>
+        <input
+          matInput
+          [formControl]="formGroup.controls.search"
+          placeholder="e.g. poland"
+        />
+        <span
+          matSuffix
+          class="toolbar-clear-search-icon"
+          [style.visibility]="
+            formGroup.controls.search.value ? 'visible' : 'hidden'
+          "
+        >
+          <mat-icon (click)="clearSearch()">close</mat-icon></span
+        >
+      </mat-form-field>
+    </form>
+    <span class="toolbar-spacer"></span>
     <img
       class="toolbar-logo"
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Globe_font_awesome.svg/480px-Globe_font_awesome.svg.png"
       alt="globe"
     />
-    <span class="toolbar-spacer"></span>
-    <form class="form-inline form-sm" [formGroup]="formGroup">
-      <mat-search-bar [formControl]="inputControl"></mat-search-bar>
-    </form>
   </mat-toolbar-row>
 </mat-toolbar>

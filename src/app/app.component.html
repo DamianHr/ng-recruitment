@@ -1,7 +1,7 @@
 <div class="header">
-    <h1 class="mat-1">{{ title }}</h1>
+  <h1 class="mat-1">{{ title }}</h1>
 </div>
 <app-search-bar
-        (searchChanged)="appCountries.onSearchUpdate($event)"
+  (searchChanged)="appCountries.onSearchUpdate($event)"
 ></app-search-bar>
 <app-countries #appCountries></app-countries>

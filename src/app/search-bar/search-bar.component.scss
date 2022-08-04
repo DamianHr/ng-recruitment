@@ -1,11 +1,5 @@
-.mat-toolbar-row {
-  height: 100px;
-  mat-search-bar,
-  mat-search-bar > .mat-search_icons > mat-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 32px;
-  }
+.toolbar-row {
+  height: 80px;
 }
 
 .toolbar-spacer {
@@ -16,6 +10,22 @@
   display: inline;
   width: 36px;
   animation: spin linear 10s infinite;
+}
+
+.toolbar-search {
+  font-size: 16px;
+
+  &.mat-form-field-appearance-outline .mat-form-field-wrapper{
+    margin-bottom: -1.25em;
+ }
+
+ .mat-form-field-prefix {
+   margin-right: 5px;
+ }
+}
+
+.toolbar-clear-search-icon {
+  cursor: pointer;
 }
 
 @keyframes spin {

@@ -1,10 +1,9 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
-
-import { Country } from './definitions';
 import { MatTable } from '@angular/material/table';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { CountriesService } from './countries.service';
+import { Country } from './definitions';
 
 @Component({
   selector: 'app-countries',
@@ -12,22 +11,30 @@ import { CountriesService } from './countries.service';
   styleUrls: ['countries.component.scss'],
 })
 export class CountriesComponent implements OnDestroy {
-  @ViewChild(MatTable) table: MatTable<Country>;
-  displayedColumns: string[] = ['name', 'region', 'population', 'alpha3Code'];
-  data: Readonly<Country[]> = [];
+  @ViewChild(MatTable)
+  public table!: MatTable<Country>;
 
-  private destroyer: Subject<void> = new Subject();
+  public displayedColumns: string[] = [
+    'name',
+    'region',
+    'population',
+    'alpha3Code',
+  ];
 
-  constructor(private readonly countriesService: CountriesService) { }
+  public data: Readonly<Country[]> = [];
 
-  ngOnDestroy(): void {
-    this.destroyer.next();
-    this.destroyer.unsubscribe();
+  #destroyer: Subject<void> = new Subject();
+
+  constructor(private readonly countriesService: CountriesService) {}
+
+  public ngOnDestroy(): void {
+    this.#destroyer.next();
+    this.#destroyer.unsubscribe();
   }
 
-  public onSearchUpdate(searchTerm: string): void {
-    this.getData(searchTerm)
-      .pipe(takeUntil(this.destroyer))
+  public onSearchUpdate(searchTerm: string | null): void {
+    this.getData(searchTerm ?? '')
+      .pipe(takeUntil(this.#destroyer))
       .subscribe((countries) => (this.data = countries));
   }
 
@@ -36,8 +43,7 @@ export class CountriesComponent implements OnDestroy {
    */
 
   public getData(parameter: string): Observable<ReadonlyArray<Country>> {
-    return this.countriesService
-      .getByParameter(parameter);
+    return this.countriesService.getByParameter(parameter);
   }
 
   /**
@@ -51,7 +57,7 @@ export class CountriesComponent implements OnDestroy {
     property: keyof Country,
     ascending = false
   ): Readonly<Country[]> {
-    return undefined;
+    return [];
   }
 
   /**
@@ -60,6 +66,6 @@ export class CountriesComponent implements OnDestroy {
    * @param data The array of countries.
    */
   public filter(data: Readonly<Country[]>): Readonly<Country[]> {
-    return undefined;
+    return [];
   }
 }
