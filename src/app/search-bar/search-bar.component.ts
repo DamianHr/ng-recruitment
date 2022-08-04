@@ -7,7 +7,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import {filter, Subject} from 'rxjs';
+import { filter, Subject } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
 
 @Component({
@@ -32,6 +32,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
     this.formGroup.controls.search.valueChanges
       .pipe(
         debounceTime(500),
+        filter((value) => !!value?.length),
         tap((value) => this.searchChanged.emit(value)),
         takeUntil(this.#destroyer)
       )
