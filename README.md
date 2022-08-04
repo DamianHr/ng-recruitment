@@ -28,9 +28,9 @@ Make sure that all the acceptance criteria are met.
 - The header of the new column is labeled `Flag`
 - The flag has the following styles:
   - a width of 25px
-  - a solid black border of 1px
+  - a continuous black border of 1px
 - No additional queries are used to achieve this task
-- Examples about the current API response can be found [here](https://restcountries.eu/#api-endpoints-response-example)
+- Examples about the current API response can be found [here](https://restcountries.com/#api-endpoints-v2-all)
 
 #### Challenge #2 - We want filters!
 
@@ -45,7 +45,7 @@ Make sure that all the acceptance criteria are met.
   - The name of the country starts with one of the letters ['b', 'g', 'l']
 - The `filter()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
 - The `filter()` function is applied to `getData()` to see the filtered data in the app
-- You are allowed to use [Mozilla's Javascipt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+- You are allowed to use [Mozilla's Javascript doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 #### Challenge #3 - We want order!
 
@@ -59,6 +59,6 @@ then use this function to organize the data in the country table. Make sure that
 - The `sort()` function passes the tests present in `src/app/countries/countries.component.spec.ts`
 - The tests of the `sort()` function cover all the branches of the function
 - The `sort()` function is applied to `getData()` to see the sorted data in the app
-- You are allowed to use [Mozilla's Javascipt doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+- You are allowed to use [Mozilla's Javascript doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 
 Good luck ! :)

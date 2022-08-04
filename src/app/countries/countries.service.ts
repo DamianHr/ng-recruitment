@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { Country } from './definitions';
 
 /**
- * For more information refer to https://restcountries.eu/#api-endpoints-all
+ * For more information refer to https://restcountries.com/#api-endpoints-v2-all
  */
 const ApiUrl = 'https://restcountries.com/v2/name';
 
