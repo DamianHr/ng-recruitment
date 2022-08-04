@@ -6,14 +6,9 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { debounceTime, takeUntil, tap } from 'rxjs/operators';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { debounceTime, takeUntil, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-bar',
@@ -22,10 +17,8 @@ import { Subject } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchBarComponent implements OnInit, OnDestroy {
-  public inputControl: FormControl = new FormControl('', [
-    Validators.minLength(1),
-  ]);
-  public formGroup: FormGroup = this.formBuilder.group({
+  public inputControl = new FormControl('', [Validators.minLength(1)]);
+  public formGroup = this.formBuilder.group({
     search: this.inputControl,
   });
 
