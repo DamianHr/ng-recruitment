@@ -22,7 +22,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   });
 
   @Output()
-  public searchChanged = new EventEmitter<string | null>();
+  public searchChanged = new EventEmitter<string>();
 
   #destroyer = new Subject<void>();
 
@@ -32,7 +32,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
     this.formGroup.controls.search.valueChanges
       .pipe(
         debounceTime(500),
-        filter((value) => !!value?.length),
+        filter((value): value is string => !!value?.length),
         tap((value) => this.searchChanged.emit(value)),
         takeUntil(this.#destroyer)
       )
