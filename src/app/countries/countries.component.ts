@@ -32,8 +32,8 @@ export class CountriesComponent implements OnDestroy {
     this.#destroyer.unsubscribe();
   }
 
-  public onSearchUpdate(searchTerm: string | null): void {
-    this.getData(searchTerm ?? '')
+  public onSearchUpdate(searchTerm: string): void {
+    this.getData(searchTerm)
       .pipe(takeUntil(this.#destroyer))
       .subscribe((countries) => (this.data = countries));
   }
