@@ -14,18 +14,13 @@
 
 .toolbar-search {
   font-size: 16px;
-
-  &.mat-form-field-appearance-outline .mat-form-field-wrapper {
-    margin-bottom: -1.25em;
+  &.mat-form-field-appearance-outline .mat-mdc-form-field-subscript-wrapper {
+    height: 0;
   }
-
-  .mat-form-field-prefix {
-    margin-right: 5px;
+  .mat-mdc-form-field-icon-prefix {
+    padding: 5px;
+    cursor: pointer;
   }
-}
-
-.toolbar-clear-search-icon {
-  cursor: pointer;
 }
 
 @keyframes spin {

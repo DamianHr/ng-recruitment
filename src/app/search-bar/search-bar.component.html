@@ -13,15 +13,14 @@
           [formControl]="formGroup.controls.search"
           placeholder="e.g. poland"
         />
-        <span
+        <mat-icon
           matSuffix
           class="toolbar-clear-search-icon"
           [style.visibility]="
             formGroup.controls.search.value ? 'visible' : 'hidden'
           "
-        >
-          <mat-icon (click)="clearSearch()">close</mat-icon></span
-        >
+          (click)="clearSearch()">close
+        </mat-icon>
       </mat-form-field>
     </form>
     <span class="toolbar-spacer"></span>
