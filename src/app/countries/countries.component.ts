@@ -50,7 +50,7 @@ export class CountriesComponent implements OnDestroy {
    * Sorts given data based on provided property and order.
    * @param data The array of countries.
    * @param property The property to sort on.
-   * @param ascending Defines the soring order.
+   * @param ascending Defines the sorting order.
    */
   public sort(
     data: Readonly<Country[]>,
